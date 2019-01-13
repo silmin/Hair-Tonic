@@ -1,7 +1,7 @@
 enchant();
 
 window.onload = function() {
-    var core = new Core(GAME_SIZE_X, GAME_SIZE_Y);
+    var core = new Core(GAME_SIZE_WIDTH, GAME_SIZE_HEIGHT);
     core.fps = FPS;
 
     core.onload = function() {
@@ -13,7 +13,12 @@ window.onload = function() {
         }
 
         core.pushScene(sceneArray[TOP]);
+
+        let titleSprite = new Sprite(TITLE_WIDTH, TITLE_HEIGHT);
+        titleSprite.x = TITLE_X;
+        titleSprite.y = TITLE_Y;
         
+        sceneArray[TOP].addChild(titleSprite);
         sceneArray[TOP].addEventListener('touchstart', function() {
             console.log('to DESCRIPTION');
             core.replaceScene(sceneArray[DESCRIPTION]);
