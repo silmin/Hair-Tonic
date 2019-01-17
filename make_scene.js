@@ -15,7 +15,7 @@ function makeTopScene() {
     return topScene;
 }
 
-function makeDescriptinScene() {
+function makeDescriptionScene() {
     let descriptionScene = new Scene();
     let descriptionSprite = new Sprite(GAME_SIZE_WIDTH, GAME_SIZE_HEIGHT);
     descriptionSprite.x = 0;
@@ -28,4 +28,25 @@ function makeDescriptinScene() {
     });
 
     return descriptionScene;
+}
+
+function makeGameScene() {
+    let gameScene = new Scene();
+
+    let headSprite = new Sprite(HEAD_WIDTH, HEAD_HEIGHT);
+    headSprite.x = HEAD_X;
+    headSprite.y = HEAD_Y;
+    gameScene.addChild(headSprite);
+   
+    let growAreaSprite = new Sprite(GROW_AREA_WIDTH, GROW_AREA_HEIGHT);
+    growAreaSprite.x = GROW_AREA_X;
+    growAreaSprite.y = GROW_AREA_Y;
+    growAreaSprite.debugColor = '#7777ff';
+    gameScene.addChild(growAreaSprite);
+    
+
+    gameScene.addEventListener('touchstart', function() {
+        growHair(this);
+    });
+    return gameScene;
 }
