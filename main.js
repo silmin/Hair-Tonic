@@ -9,5 +9,5 @@ window.onload = function() {
     core.onload = function() {
         transitionTopScene();
     }
-    core.debug();
+    core.start();
 }

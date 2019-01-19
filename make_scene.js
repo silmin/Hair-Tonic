@@ -47,7 +47,10 @@ function makeGameScene() {
     gameScene.addChild(growAreaSprite);
     
     gameScene.addEventListener('enterframe', function() {
-        growHair(this);
+        if (core.fps % 2 === 0) {
+            growHair(this);
+            for (let i = 0; i < 5; ++i) growEffect(this);
+        }
     });
     return gameScene;
 }

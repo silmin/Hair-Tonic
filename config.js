@@ -3,13 +3,6 @@ const GAME_SIZE_HEIGHT = 960;
 
 const FPS = 30;
 
-const SCENE = 4;
-
-const TOP = 0;
-const DESCRIPTION = 1;
-const GAME = 2;
-const RESULT = 3;
-
 const TITLE_WIDTH = 600;
 const TITLE_HEIGHT = 300;
 const TITLE_X = GAME_SIZE_WIDTH / 2 - TITLE_WIDTH / 2;
@@ -21,10 +14,10 @@ const HEAD_X = GAME_SIZE_WIDTH / 2 - HEAD_WIDTH / 2;
 const HEAD_Y = GAME_SIZE_HEIGHT - HEAD_HEIGHT;
 
 const GROW_AREA_WIDTH = 500;
-const GROW_AREA_HEIGHT = 200;
+const GROW_AREA_HEIGHT = 230;
 
 const GROW_AREA_X = HEAD_X + HEAD_WIDTH / 2 - GROW_AREA_WIDTH / 2;
-const GROW_AREA_Y = HEAD_Y + 170;
+const GROW_AREA_Y = HEAD_Y + 150;
 
 const HAIR_WIDTH = 20;
 const HAIR_HEIGHT = 40;
