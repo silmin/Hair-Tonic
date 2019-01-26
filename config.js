@@ -21,3 +21,5 @@ const GROW_AREA_Y = HEAD_Y + 150;
 
 const HAIR_WIDTH = 20;
 const HAIR_HEIGHT = 40;
+
+const GAME_TIME = 10;
