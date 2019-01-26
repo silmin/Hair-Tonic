@@ -45,11 +45,20 @@ function makeGameScene() {
     growAreaSprite.y = GROW_AREA_Y;
     growAreaSprite.debugColor = '#7777ff';
     gameScene.addChild(growAreaSprite);
+
+    let cntHear = 0;
+    let cntLabel = new Label();
+    cntLabel.text = "Hear Count : " + String(cntHear);
+    cntLabel.x = 10;
+    cntLabel.y = 20;
+    gameScene.addChild(cntLabel);
     
     gameScene.addEventListener('enterframe', function() {
         if (core.fps % 2 === 0) {
             growHair(this);
             for (let i = 0; i < 5; ++i) growEffect(this);
+            cntHear++;
+            cntLabel.text = "Hear Count : " + String(cntHear);
         }
     });
     return gameScene;
