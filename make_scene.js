@@ -71,7 +71,19 @@ function makeGameScene() {
         if(isFrame(frameCnt)) {
             frameCnt = 0;
             timeBar = updateTimeBar(timeBar);
+            if(timeBar.time === 0) {
+                transitionResultScene();
+            }
         }
     });
     return gameScene;
+}
+
+function makeResultScene() {
+    let resultScene = new Scene();
+
+    resultScene.addEventListener('touchstart', function() {
+        transitionTopScene();
+    });
+    return resultScene;
 }
