@@ -23,3 +23,4 @@ const HAIR_WIDTH = 20;
 const HAIR_HEIGHT = 40;
 
 const GAME_TIME = 10;
+const TIME_BAR_HEIGHT = 10;

@@ -53,11 +53,21 @@ function makeGameScene() {
     cntHearLabel.y = 20;
     gameScene.addChild(cntHearLabel);
 
+    let timeBar = new Sprite(TIME_BAR_HEIGHT, GAME_SIZE_WIDTH);
+    timeBar.time = GAME_TIME;
+    let frameCnt = 0;
+
+    gameScene.addEventListener('touchstart', function() {
+        growHair(this);
+        for (let i = 0; i < 5; ++i) growEffect(this);
+    });
     gameScene.addEventListener('enterframe', function() {
-        if (core.fps % 2 === 0) {
-            growHair(this);
-            for (let i = 0; i < 5; ++i) growEffect(this);
-            cntHearLabel = updateCntHear(cntHearLabel);
+        cntHearLabel = updateCntHear(cntHearLabel);
+        
+        frameCnt++;
+        if(isFrame(frameCnt)) {
+            frameCnt = 0;
+            timeBar = updateTimeBar(timeBar);
         }
     });
     return gameScene;
