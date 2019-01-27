@@ -53,17 +53,20 @@ function makeGameScene() {
     cntHearLabel.y = 20;
     gameScene.addChild(cntHearLabel);
 
-    let timeBar = new Sprite(TIME_BAR_HEIGHT, GAME_SIZE_WIDTH);
+    let timeBar = new Sprite(GAME_SIZE_WIDTH, TIME_BAR_HEIGHT);
     timeBar.time = GAME_TIME;
+    timeBar.x = 5;
+    timeBar.y = 0;
+    gameScene.addChild(timeBar);
+
     let frameCnt = 0;
 
     gameScene.addEventListener('touchstart', function() {
         growHair(this);
         for (let i = 0; i < 5; ++i) growEffect(this);
+        cntHearLabel = updateCntHear(cntHearLabel);
     });
     gameScene.addEventListener('enterframe', function() {
-        cntHearLabel = updateCntHear(cntHearLabel);
-        
         frameCnt++;
         if(isFrame(frameCnt)) {
             frameCnt = 0;
