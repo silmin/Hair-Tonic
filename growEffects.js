@@ -10,7 +10,7 @@ function growEffect(gameScene) {
 
     effect.addEventListener('enterframe', function() {
         effect.y -= effect.speed;
-        if (effect.speed > 0)  {
+        if (effect.speed > 0) {
             effect.speed--;
             effect.opacity -= 0.05;
         } else {

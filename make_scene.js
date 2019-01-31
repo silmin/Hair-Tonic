@@ -51,7 +51,7 @@ function makeGameScene() {
     cntHearLabel.text = "Hear Count : " + String(cntHearLabel.value);
     cntHearLabel.x = 10;
     cntHearLabel.y = 20;
-    cntHearLabel.font = "30px sans-serif";
+    cntHearLabel.font = "25px sans-serif";
     gameScene.addChild(cntHearLabel);
 
     let timeBar = new Sprite(GAME_SIZE_WIDTH, TIME_BAR_HEIGHT);
@@ -83,6 +83,15 @@ function makeGameScene() {
 
 function makeResultScene() {
     let resultScene = new Scene();
+
+    let resultTitleLabel = new Label();
+    resultTitleLabel.width = RESULT_TITLE_LABEL_WIDTH;
+    resultTitleLabel.x = RESULT_TITLE_LABEL_X;
+    resultTitleLabel.y = RESULT_TITLE_LABEL_Y;
+    resultTitleLabel.text = "result";
+    resultTitleLabel.font = "30px sans-serif";
+    resultTitleLabel.textAlign = "center";
+    resultScene.addChild(resultTitleLabel);
 
     resultScene.addEventListener('touchstart', function() {
         transitionTopScene();
