@@ -51,12 +51,14 @@ function makeGameScene() {
     cntHearLabel.text = "Hear Count : " + String(cntHearLabel.value);
     cntHearLabel.x = 10;
     cntHearLabel.y = 20;
+    cntHearLabel.font = "30px sans-serif";
     gameScene.addChild(cntHearLabel);
 
     let timeBar = new Sprite(GAME_SIZE_WIDTH, TIME_BAR_HEIGHT);
     timeBar.time = GAME_TIME;
-    timeBar.x = 5;
+    timeBar.x = 0;
     timeBar.y = 0;
+    timeBar.backgroundColor = "#00ff00";
     gameScene.addChild(timeBar);
 
     let frameCnt = 0;
