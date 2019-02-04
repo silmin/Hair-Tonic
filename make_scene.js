@@ -54,6 +54,15 @@ function makeGameScene() {
     cntHearLabel.font = "25px sans-serif";
     gameScene.addChild(cntHearLabel);
 
+    let descriptionLabel = new Label();
+    descriptionLabel.width = DESCRIPTION_LABEL_WIDTH;
+    descriptionLabel.x = DESCRIPTION_LABEL_X;
+    descriptionLabel.y = DESCRIPTION_LABEL_Y;
+    descriptionLabel.font = "40px sans-serif";
+    descriptionLabel.text = "Click to grow !!!";
+    descriptionLabel.textAlign = "center";
+    gameScene.addChild(descriptionLabel);
+
     let timeBar = new Sprite(GAME_SIZE_WIDTH, TIME_BAR_HEIGHT);
     timeBar.time = GAME_TIME;
     timeBar.x = 0;
@@ -62,19 +71,26 @@ function makeGameScene() {
     gameScene.addChild(timeBar);
 
     let frameCnt = 0;
+    let startFlg = false;
 
     gameScene.addEventListener('touchstart', function() {
+        if (!startFlg) {
+            startFlg = true;
+            descriptionLabel.visible = false;
+        }
         growHair(this);
         for (let i = 0; i < 5; ++i) growEffect(this);
         cntHearLabel = updateCntHear(cntHearLabel);
     });
     gameScene.addEventListener('enterframe', function() {
-        frameCnt++;
-        if(isFrame(frameCnt)) {
-            frameCnt = 0;
-            timeBar = updateTimeBar(timeBar);
-            if(timeBar.time === 0) {
-                transitionResultScene(cntHearLabel.value);
+        if (startFlg) {
+            frameCnt++;
+            if (isFrame(frameCnt)) {
+                frameCnt = 0;
+                timeBar = updateTimeBar(timeBar);
+                if (timeBar.time === 0) {
+                    transitionResultScene(cntHearLabel.value);
+                }
             }
         }
     });
