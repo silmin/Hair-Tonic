@@ -58,14 +58,14 @@ function makeGameScene() {
             frameCnt = 0;
             timeBar = updateTimeBar(timeBar);
             if(timeBar.time === 0) {
-                transitionResultScene();
+                transitionResultScene(cntHearLabel.value);
             }
         }
     });
     return gameScene;
 }
 
-function makeResultScene() {
+function makeResultScene(grewCnt) {
     let resultScene = new Scene();
 
     let resultTitleLabel = new Label();
@@ -76,6 +76,16 @@ function makeResultScene() {
     resultTitleLabel.font = "30px sans-serif";
     resultTitleLabel.textAlign = "center";
     resultScene.addChild(resultTitleLabel);
+
+    let grewCntLabel = new Label();
+    grewCntLabel.x = RESULT_SCORE_LABEL_X;
+    grewCntLabel.y = RESULT_SCORE_LABEL_Y;
+    grewCntLabel.width = RESULT_SCORE_LABEL_WIDTH;
+    grewCntLabel.value = grewCnt;
+    grewCntLabel.text = "Grown Hair : " + String(grewCntLabel.value);
+    grewCntLabel.font = "40px sans-serif";
+    grewCntLabel.textAlign = "center";
+    resultScene.addChild(grewCntLabel);
 
     resultScene.addEventListener('touchstart', function() {
         transitionTopScene();

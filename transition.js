@@ -10,8 +10,8 @@ function transitionGameScene() {
     core.replaceScene(gameScene);
 }
 
-function transitionResultScene() {
+function transitionResultScene(grewCnt) {
     let core = Core.instance;
-    let resultScene = makeResultScene();
+    let resultScene = makeResultScene(grewCnt);
     core.replaceScene(resultScene);
 }
