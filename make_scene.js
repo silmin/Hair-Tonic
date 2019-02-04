@@ -6,8 +6,23 @@ function makeTopScene() {
     titleSprite.x = TITLE_X;
     titleSprite.y = TITLE_Y;
     titleSprite.image = core.assets['./img/title.png'];
-
     topScene.addChild(titleSprite);
+
+    let opacity_step = 0.1;
+    let plzClickLabel = new Label();
+    plzClickLabel.width = PLZ_CLICK_LABEL_WIDTH;
+    plzClickLabel.x = PLZ_CLICK_LABEL_X;
+    plzClickLabel.y = PLZ_CLICK_LABEL_Y;
+    plzClickLabel.font = "20px sans-serif"
+    plzClickLabel.text = "click to start";
+    plzClickLabel.textAlign = "center";
+    plzClickLabel.addEventListener('enterframe', function(){
+        this.opacity -= 0.025;
+        if (this.opacity <= 0) this.opacity = 1;
+    });
+    topScene.addChild(plzClickLabel);
+
+
     topScene.addEventListener('touchstart', function () {
         transitionGameScene();
     });
