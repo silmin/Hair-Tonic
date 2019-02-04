@@ -1,10 +1,11 @@
 function makeTopScene() {
     let topScene = new Scene();
-    topScene.backgroundColor = '#3f3f3f';
+    let core = Core.instance;
 
     let titleSprite = new Sprite(TITLE_WIDTH, TITLE_HEIGHT);
     titleSprite.x = TITLE_X;
     titleSprite.y = TITLE_Y;
+    titleSprite.image = core.assets['./img/title.png'];
 
     topScene.addChild(titleSprite);
     topScene.addEventListener('touchstart', function () {
