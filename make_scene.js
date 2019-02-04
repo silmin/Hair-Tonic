@@ -87,8 +87,15 @@ function makeResultScene(grewCnt) {
     grewCntLabel.textAlign = "center";
     resultScene.addChild(grewCntLabel);
 
-    resultScene.addEventListener('touchstart', function() {
+    let restartButton = new Button("Play again", "light");
+    restartButton.width = AGAIN_BUTTON_WIDTH;
+    restartButton.height = AGAIN_BUTTON_HEIGHT;
+    restartButton.x = AGAIN_BUTTON_X;
+    restartButton.y = AGAIN_BUTTON_Y;
+    restartButton.addEventListener('touchend', function() {
         transitionTopScene();
     });
+    resultScene.addChild(restartButton);
+
     return resultScene;
 }
