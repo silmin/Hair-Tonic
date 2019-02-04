@@ -8,26 +8,10 @@ function makeTopScene() {
 
     topScene.addChild(titleSprite);
     topScene.addEventListener('touchstart', function () {
-        console.log('to DESCRIPTION');
-        transitionDescriptionScene();
+        transitionGameScene();
     });
     
     return topScene;
-}
-
-function makeDescriptionScene() {
-    let descriptionScene = new Scene();
-    let descriptionSprite = new Sprite(GAME_SIZE_WIDTH, GAME_SIZE_HEIGHT);
-    descriptionSprite.x = 0;
-    descriptionSprite.y = 0;
-
-    descriptionScene.addChild(descriptionSprite);
-    descriptionScene.addEventListener('touchstart', function() {
-        console.log('to GAME');
-        transitionGameScene();
-    });
-
-    return descriptionScene;
 }
 
 function makeGameScene() {
