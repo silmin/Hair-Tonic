@@ -67,7 +67,7 @@ function makeGameScene() {
     timeBar.time = GAME_TIME;
     timeBar.x = 0;
     timeBar.y = 0;
-    timeBar.backgroundColor = "#00ff00";
+    timeBar.backgroundColor = "#008b8b";
     gameScene.addChild(timeBar);
 
     let frameCnt = 0;
