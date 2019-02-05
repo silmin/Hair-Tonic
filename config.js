@@ -1,4 +1,4 @@
-const GAME_SIZE_WIDTH = 560;
+const GAME_SIZE_WIDTH = 620;
 const GAME_SIZE_HEIGHT = 560;
 
 const FPS = 30;
